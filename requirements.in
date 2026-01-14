@@ -3,6 +3,7 @@ sentence-transformers
 langchain-community
 langchain-groq
 langchain-huggingface
+langchain-openai
 chromadb
 jikanpy-v4
 python-dotenv
