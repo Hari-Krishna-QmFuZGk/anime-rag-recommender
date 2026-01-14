@@ -24,6 +24,7 @@ _client = chromadb.Client(
 
 _collection = _client.get_or_create_collection(_COLLECTION_NAME)
 
+
 def index_anime() -> None:
     """
     Build vector index from ingested anime data.
@@ -74,8 +75,6 @@ def index_anime() -> None:
                 ids=batch_ids,
             )
 
-        _client.persist()
-
         log.info("Indexing complete")
 
     except Exception as exc:
@@ -86,6 +85,6 @@ def index_anime() -> None:
             context={"chunks": len(texts)},
         )
 
+
 if __name__ == "__main__":
     index_anime()
-
