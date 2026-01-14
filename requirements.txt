@@ -26,6 +26,8 @@ backoff==2.2.1
     # via posthog
 bcrypt==5.0.0
     # via chromadb
+black==25.12.0
+    # via -r requirements.in
 blinker==1.9.0
     # via streamlit
 build==1.4.0
@@ -44,6 +46,7 @@ chromadb==1.4.0
     # via -r requirements.in
 click==8.3.1
     # via
+    #   black
     #   streamlit
     #   typer
     #   uvicorn
@@ -198,7 +201,9 @@ multidict==6.7.0
     #   aiohttp
     #   yarl
 mypy-extensions==1.1.0
-    # via typing-inspect
+    # via
+    #   black
+    #   typing-inspect
 narwhals==2.15.0
     # via altair
 networkx==3.6.1
@@ -250,6 +255,7 @@ overrides==7.7.0
 packaging==25.0
     # via
     #   altair
+    #   black
     #   build
     #   huggingface-hub
     #   langchain-core
@@ -262,8 +268,12 @@ pandas==2.3.3
     # via
     #   -r requirements.in
     #   streamlit
+pathspec==1.0.3
+    # via black
 pillow==12.1.0
     # via streamlit
+platformdirs==4.5.1
+    # via black
 posthog==5.4.0
     # via chromadb
 propcache==0.4.1
@@ -319,6 +329,8 @@ python-dotenv==1.2.1
     #   -r requirements.in
     #   pydantic-settings
     #   uvicorn
+pytokens==0.3.0
+    # via black
 pytz==2025.2
     # via pandas
 pyyaml==6.0.3

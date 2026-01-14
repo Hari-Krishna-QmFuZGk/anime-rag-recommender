@@ -10,4 +10,5 @@ pydantic
 tenacity
 streamlit
 pandas
+black
 
