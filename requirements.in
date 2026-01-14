@@ -1,0 +1,13 @@
+langchain
+sentence-transformers
+langchain-community
+langchain-groq
+langchain-huggingface
+chromadb
+jikanpy
+python-dotenv
+pydantic
+tenacity
+streamlit
+pandas
+
