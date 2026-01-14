@@ -4,7 +4,7 @@ aiohappyeyeballs==2.6.1
     # via aiohttp
 aiohttp==3.13.3
     # via
-    #   jikanpy
+    #   jikanpy-v4
     #   langchain-community
 aiosignal==1.4.0
     # via aiohttp
@@ -125,7 +125,7 @@ importlib-metadata==8.7.1
     # via opentelemetry-api
 importlib-resources==6.5.2
     # via chromadb
-jikanpy==4.3.2
+jikanpy-v4==1.0.2
     # via -r requirements.in
 jinja2==3.1.6
     # via
@@ -352,7 +352,7 @@ regex==2025.11.3
 requests==2.32.5
     # via
     #   huggingface-hub
-    #   jikanpy
+    #   jikanpy-v4
     #   kubernetes
     #   langchain-classic
     #   langchain-community
@@ -391,7 +391,7 @@ setuptools==80.9.0
 shellingham==1.5.4
     # via typer
 simplejson==3.20.2
-    # via jikanpy
+    # via jikanpy-v4
 six==1.17.0
     # via
     #   kubernetes
