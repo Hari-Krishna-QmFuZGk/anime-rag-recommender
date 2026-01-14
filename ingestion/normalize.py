@@ -1,10 +1,11 @@
+import os
 from typing import Optional
 
 from ingestion.schema import AnimeDocument
 from utils.exceptions import DataNormalizationError
-from utils.logger import Logging
+from utils.logger import Logging, LOG_FILE_CONSTANT
 
-log = Logging("ingestion")
+log = Logging(os.getenv(LOG_FILE_CONSTANT, "ingestion"))
 
 
 def normalize_anime(raw: dict) -> Optional[AnimeDocument]:
@@ -45,11 +46,7 @@ def normalize_anime(raw: dict) -> Optional[AnimeDocument]:
             synopsis=synopsis,
             genres=[g["name"] for g in raw.get("genres", [])],
             themes=[t["name"] for t in raw.get("themes", [])],
-            studio=(
-                raw["studios"][0]["name"]
-                if raw.get("studios")
-                else None
-            ),
+            studio=(raw["studios"][0]["name"] if raw.get("studios") else None),
             score=raw.get("score"),
             year=raw.get("year"),
             episodes=raw.get("episodes"),

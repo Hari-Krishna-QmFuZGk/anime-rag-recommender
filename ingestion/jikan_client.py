@@ -5,17 +5,16 @@ from typing import List
 from jikanpy import Jikan
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-from utils.logger import Logging, _OS_LOG_FILE_CONSTANT
+from utils.logger import Logging, LOG_FILE_CONSTANT
 from utils.exceptions import JikanAPIError
 
-LOG_FILE = os.getenv(_OS_LOG_FILE_CONSTANT, "ingestion")
-log = Logging(LOG_FILE)
+log = Logging(os.getenv(LOG_FILE_CONSTANT, "ingestion"))
 
 # Jikan client
 jikan = Jikan()
 
 # Safe rate limit: ~2–3 req/sec
-_RATE_LIMIT_SLEEP = 0.4
+_RATE_LIMIT_SLEEP_SECONDS = 0.8
 
 
 @retry(
@@ -86,6 +85,8 @@ def fetch_anime_pages(start_page: int, end_page: int) -> List[dict]:
         all_records.extend(records)
         time.sleep(_RATE_LIMIT_SLEEP_SECONDS)
 
-    log.info(f"Fetched {len(all_records)} anime records from pages {start_page}–{end_page}")
+    log.info(
+        f"Fetched {len(all_records)} anime records from pages {start_page}–{end_page}"
+    )
 
     return all_records

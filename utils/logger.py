@@ -14,7 +14,7 @@ DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 STATUS = "status"
 ERROR = "error"
-_OS_LOG_FILE_CONSTANT = "LOG_FILE"
+LOG_FILE_CONSTANT = "LOG_FILE"
 
 
 class SizedTimedRotatingFileHandler(TimedRotatingFileHandler):
