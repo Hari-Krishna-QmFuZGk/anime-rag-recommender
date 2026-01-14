@@ -50,7 +50,7 @@ def load_anime() -> List[AnimeDocument]:
         with _ANIME_FILE.open("r", encoding="utf-8") as f:
             for line in f:
                 if line.strip():
-                    anime.append(AnimeDocument(**json.loads(line)))
+                    anime.append(AnimeDocument.model_validate_json(line))
 
         log.info(f"Loaded {len(anime)} anime records from JSONL")
 
